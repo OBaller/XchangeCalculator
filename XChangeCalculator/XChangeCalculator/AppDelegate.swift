@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  XChangeCalculator
 //
-//  Created by IBE on 12/02/2022.
+//  Created by naseem on 12/02/2022.
 //
 
 import UIKit

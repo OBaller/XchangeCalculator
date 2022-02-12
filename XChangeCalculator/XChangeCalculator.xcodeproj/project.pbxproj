@@ -18,6 +18,10 @@
 		B46CB1E527B8137700293105 /* XChangeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB1E427B8137700293105 /* XChangeCalculatorTests.swift */; };
 		B46CB1EF27B8137700293105 /* XChangeCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB1EE27B8137700293105 /* XChangeCalculatorUITests.swift */; };
 		B46CB1F127B8137700293105 /* XChangeCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB1F027B8137700293105 /* XChangeCalculatorUITestsLaunchTests.swift */; };
+		B46CB1FF27B8186500293105 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB1FE27B8186500293105 /* Extension+ViewController.swift */; };
+		B46CB20227B8192B00293105 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB20127B8192B00293105 /* CurrencyViewModel.swift */; };
+		B46CB20527B81B8900293105 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB20427B81B8900293105 /* Model.swift */; };
+		B46CB20827B81C0500293105 /* LineChartDisplayIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB20727B81C0500293105 /* LineChartDisplayIndicator.swift */; };
 		CDE5550C2F7DEA9B956CBF77 /* Pods_XChangeCalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0A30B0E455DBC8AB103109 /* Pods_XChangeCalculatorTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,10 @@
 		B46CB1EA27B8137700293105 /* XChangeCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XChangeCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46CB1EE27B8137700293105 /* XChangeCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XChangeCalculatorUITests.swift; sourceTree = "<group>"; };
 		B46CB1F027B8137700293105 /* XChangeCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XChangeCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B46CB1FE27B8186500293105 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
+		B46CB20127B8192B00293105 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		B46CB20427B81B8900293105 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B46CB20727B81C0500293105 /* LineChartDisplayIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartDisplayIndicator.swift; sourceTree = "<group>"; };
 		D84B98477589B3A484B94FB7 /* Pods-XChangeCalculator-XChangeCalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XChangeCalculator-XChangeCalculatorUITests.debug.xcconfig"; path = "Target Support Files/Pods-XChangeCalculator-XChangeCalculatorUITests/Pods-XChangeCalculator-XChangeCalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC35C50A179008C5A132D291 /* Pods_XChangeCalculator_XChangeCalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XChangeCalculator_XChangeCalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F527E42C37D18A23AF1B67CE /* Pods-XChangeCalculator-XChangeCalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XChangeCalculator-XChangeCalculatorUITests.release.xcconfig"; path = "Target Support Files/Pods-XChangeCalculator-XChangeCalculatorUITests/Pods-XChangeCalculator-XChangeCalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +109,6 @@
 				4F2CCDBA31AB4B6F1ED28794 /* Pods-XChangeCalculatorTests.debug.xcconfig */,
 				452F10919A62A6B142E9F644 /* Pods-XChangeCalculatorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,9 +137,12 @@
 		B46CB1CC27B8136F00293105 /* XChangeCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				B46CB20627B81BCB00293105 /* ChartView */,
+				B46CB20327B81B6900293105 /* Model */,
+				B46CB20027B8190A00293105 /* ViewModel */,
 				B46CB1CD27B8136F00293105 /* AppDelegate.swift */,
 				B46CB1CF27B8136F00293105 /* SceneDelegate.swift */,
-				B46CB1D127B8136F00293105 /* ViewController.swift */,
+				B46CB1FD27B8183400293105 /* Controller */,
 				B46CB1D327B8136F00293105 /* Main.storyboard */,
 				B46CB1D627B8137500293105 /* Assets.xcassets */,
 				B46CB1D827B8137500293105 /* LaunchScreen.storyboard */,
@@ -156,6 +166,39 @@
 				B46CB1F027B8137700293105 /* XChangeCalculatorUITestsLaunchTests.swift */,
 			);
 			path = XChangeCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		B46CB1FD27B8183400293105 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B46CB1D127B8136F00293105 /* ViewController.swift */,
+				B46CB1FE27B8186500293105 /* Extension+ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B46CB20027B8190A00293105 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B46CB20127B8192B00293105 /* CurrencyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B46CB20327B81B6900293105 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B46CB20427B81B8900293105 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B46CB20627B81BCB00293105 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				B46CB20727B81C0500293105 /* LineChartDisplayIndicator.swift */,
+			);
+			path = ChartView;
 			sourceTree = "<group>";
 		};
 		B547C7199F5EB5455AD09481 /* Frameworks */ = {
@@ -407,8 +450,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46CB1FF27B8186500293105 /* Extension+ViewController.swift in Sources */,
+				B46CB20227B8192B00293105 /* CurrencyViewModel.swift in Sources */,
 				B46CB1D227B8136F00293105 /* ViewController.swift in Sources */,
+				B46CB20527B81B8900293105 /* Model.swift in Sources */,
 				B46CB1CE27B8136F00293105 /* AppDelegate.swift in Sources */,
+				B46CB20827B81C0500293105 /* LineChartDisplayIndicator.swift in Sources */,
 				B46CB1D027B8136F00293105 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
