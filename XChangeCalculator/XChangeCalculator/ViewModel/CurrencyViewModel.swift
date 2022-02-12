@@ -20,7 +20,7 @@ class CurrencyViewModel {
     let persistRealm = RealmPersistenceStore()
     var base: [String] = [String]()
     var urlString: String?
-    var apiClass: ApiCall?
+    var apiClass: NetworkService?
     var readDataSaved : ((Bool) -> Void)?
     var rateArray = [Double]()
     var getConversionRate: (([Double]) -> Void)?
@@ -28,7 +28,7 @@ class CurrencyViewModel {
     
     init(apiString: String){
         self.urlString = apiString
-        apiClass = ApiCall(urlLink: urlString ?? "")
+        apiClass = NetworkService(urlLink: urlString ?? "")
     }
     
     func saveData(){

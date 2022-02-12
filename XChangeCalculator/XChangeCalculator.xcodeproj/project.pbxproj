@@ -25,6 +25,7 @@
 		B46CB20A27B81C4A00293105 /* TimeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB20927B81C4A00293105 /* TimeConversion.swift */; };
 		B46CB20D27B81CDF00293105 /* RealmPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB20C27B81CDF00293105 /* RealmPersistenceStore.swift */; };
 		B46CB20F27B81D1500293105 /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB20E27B81D1500293105 /* RealmObject.swift */; };
+		B46CB21227B8217E00293105 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB21127B8217E00293105 /* NetworkService.swift */; };
 		CDE5550C2F7DEA9B956CBF77 /* Pods_XChangeCalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0A30B0E455DBC8AB103109 /* Pods_XChangeCalculatorTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		B46CB20927B81C4A00293105 /* TimeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConversion.swift; sourceTree = "<group>"; };
 		B46CB20C27B81CDF00293105 /* RealmPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistenceStore.swift; sourceTree = "<group>"; };
 		B46CB20E27B81D1500293105 /* RealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
+		B46CB21127B8217E00293105 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D84B98477589B3A484B94FB7 /* Pods-XChangeCalculator-XChangeCalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XChangeCalculator-XChangeCalculatorUITests.debug.xcconfig"; path = "Target Support Files/Pods-XChangeCalculator-XChangeCalculatorUITests/Pods-XChangeCalculator-XChangeCalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC35C50A179008C5A132D291 /* Pods_XChangeCalculator_XChangeCalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XChangeCalculator_XChangeCalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F527E42C37D18A23AF1B67CE /* Pods-XChangeCalculator-XChangeCalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XChangeCalculator-XChangeCalculatorUITests.release.xcconfig"; path = "Target Support Files/Pods-XChangeCalculator-XChangeCalculatorUITests/Pods-XChangeCalculator-XChangeCalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		B46CB1CC27B8136F00293105 /* XChangeCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				B46CB21027B8214F00293105 /* NetworkManager */,
 				B46CB20B27B81CA600293105 /* RealmService */,
 				B46CB20627B81BCB00293105 /* ChartView */,
 				B46CB20327B81B6900293105 /* Model */,
@@ -216,6 +219,14 @@
 				B46CB20E27B81D1500293105 /* RealmObject.swift */,
 			);
 			path = RealmService;
+			sourceTree = "<group>";
+		};
+		B46CB21027B8214F00293105 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				B46CB21127B8217E00293105 /* NetworkService.swift */,
+			);
+			name = NetworkManager;
 			sourceTree = "<group>";
 		};
 		B547C7199F5EB5455AD09481 /* Frameworks */ = {
@@ -471,6 +482,7 @@
 				B46CB20227B8192B00293105 /* CurrencyViewModel.swift in Sources */,
 				B46CB1D227B8136F00293105 /* ViewController.swift in Sources */,
 				B46CB20527B81B8900293105 /* Model.swift in Sources */,
+				B46CB21227B8217E00293105 /* NetworkService.swift in Sources */,
 				B46CB20D27B81CDF00293105 /* RealmPersistenceStore.swift in Sources */,
 				B46CB20A27B81C4A00293105 /* TimeConversion.swift in Sources */,
 				B46CB1CE27B8136F00293105 /* AppDelegate.swift in Sources */,
