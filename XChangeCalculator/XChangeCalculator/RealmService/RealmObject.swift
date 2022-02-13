@@ -9,10 +9,10 @@ import Foundation
 import RealmSwift
 
 class Currency: Object {
-     @Persisted var currency = List<CurrencyDictionary>()
+     dynamic var currency = List<CurrencyDictionary>()
 }
 
 class CurrencyDictionary: Object {
-    @Persisted var currency: String = ""
-    @Persisted var rate: Double = 0.0
+    @objc dynamic var currency: String = ""
+    @objc dynamic var rate: Double = 0.0
 }

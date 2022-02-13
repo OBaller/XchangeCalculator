@@ -4,25 +4,19 @@
 //
 //  Created by naseem on 12/02/2022.
 //
-
-import DropDown
 import Foundation
+import DropDown
 import Charts
 extension ViewController {
     
-    func configureViews() {
-        lineChartView.backgroundColor = .blue
-        lineChartView.delegate = self
-        viewModel.saveData()
-        viewModel.passRetreivedData(completionHandler: { [self] data in
-            if let base = data.base, let currency = data.currency{
-                self.firstCurrencyLogo = base
-                self.secondCurrencyLogo = currency
-                configureCurrencyDropDown(firstCurrencyLogo)
-                configureSecondCurrencyDropDown(secondCurrencyLogo)
-            }
-        })
-        getConversionDate()
+    func getConversionDate() {
+        viewModel.getConversionRate = { [weak self] ratesArray in
+            self?.currencyRates = ratesArray
+        }
+        
+        viewModel.getDate = { [weak self] time in
+            self?.currentTime.text = "Mid-market exchange rate at \(time.toHour) UTC"
+        }
     }
     
     func configureLayoutViews() {
@@ -43,6 +37,24 @@ extension ViewController {
         }
     }
     
+    
+    func configureViews() {
+        lineChartView.backgroundColor = .blue
+        lineChartView.delegate = self
+        viewModel.saveData()
+        viewModel.passRetreivedData(completionHandler: { [self] data in
+            if let base = data.base, let currency = data.currency{
+                self.firstCurrencyLogo = base
+                self.secondCurrencyLogo = currency
+                configureCurrencyDropDown(firstCurrencyLogo)
+                configureSecondCurrencyDropDown(secondCurrencyLogo)
+            }
+        })
+        getConversionDate()
+    }
+
+    
+   
     func configureSecondCurrencyDropDown(_ list:[String]) {
         secondDropDownView.layer.borderWidth = 0.5
         secondDropDownLabel.text = ""
@@ -80,6 +92,8 @@ extension ViewController {
         let chartData = LineChartData(dataSets: [chartDataSet])
         lineChartView.data = chartData
     }
+    
+    
     func configureLineChartView() {
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
         lineChartView.xAxis.labelPosition = .bottom
@@ -100,15 +114,6 @@ extension ViewController {
         lineChartView.doubleTapToZoomEnabled = false
         lineChartView.legend.enabled = false
         lineChartView.animate(xAxisDuration: 1.5)
-    }
-    func getConversionDate() {
-        viewModel.getConversionRate = { [weak self] ratesArray in
-            self?.currencyRates = ratesArray
-        }
-        
-        viewModel.getDate = { [weak self] time in
-            self?.currentTime.text = "Mid-market exchange rate at \(time.toHour) UTC"
-        }
     }
     
 }
