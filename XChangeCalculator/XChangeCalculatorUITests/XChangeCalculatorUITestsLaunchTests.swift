@@ -2,7 +2,7 @@
 //  XChangeCalculatorUITestsLaunchTests.swift
 //  XChangeCalculatorUITests
 //
-//  Created by IBE on 12/02/2022.
+//  Created by naseem on 12/02/2022.
 //
 
 import XCTest

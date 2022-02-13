@@ -2,35 +2,32 @@
 //  XChangeCalculatorTests.swift
 //  XChangeCalculatorTests
 //
-//  Created by IBE on 12/02/2022.
+//  Created by naseem on 12/02/2022.
 //
 
 import XCTest
 @testable import XChangeCalculator
 
 class XChangeCalculatorTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
+//    var sut: CurrencyViewModel!
+//
+//    override func setUpWithError() throws {
+//        try super.setUpWithError()
+//        sut = CurrencyViewModel(apiString: "http://data.fixer.io/api/latest?access_key=6632a7ba5b5888106c6fdfb776308d5e&format=1")
+//    }
+//
+//    override func tearDownWithError() throws {
+//        sut = nil
+//        try super.tearDownWithError()
+//    }
+//
+//    func testDollarValue() {
+//        let guessValue = sut.timeStamp + 5
+//
+//        sut.saveData()
+//
+//        XCTAssertEqual(sut.timeStamp, guessValue - 5)
+//    }
+    
 }
