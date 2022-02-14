@@ -18,6 +18,7 @@ class NetworkService{
     init(urlLink: String){
         self.urlLink = urlLink
     }
+    
     func getData(completionHandler: @escaping (CurrencyModel) -> Void){
         AF.request(urlLink).responseDecodable(of: CurrencyModel.self) { result in
             if let response = result.value{

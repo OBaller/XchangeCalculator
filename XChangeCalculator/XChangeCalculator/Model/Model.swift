@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - JSON Model
+
 struct CurrencyModel: Codable {
         let success: Bool
         var timestamp: Int

@@ -18,16 +18,20 @@ final class RealmPersistenceStore: PersistenceStore {
             self.realm.add(currency)
         }
     }
+    
     func readData() -> Results<Currency> {
         let items = realm.objects(Currency.self)
         return items
     }
+    
     func delete(){
         try! realm.write {
           realm.deleteAll()
         }
     }
 }
+
+// MARK: - Data Persistence Store
 
 protocol PersistenceStore {
     func saveData(of currency: Currency)

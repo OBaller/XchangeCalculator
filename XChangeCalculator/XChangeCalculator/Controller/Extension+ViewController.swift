@@ -9,6 +9,7 @@ import DropDown
 import Charts
 extension ViewController {
     
+    // MARK: - Conversion rate function
     func getConversionDate() {
         viewModel.getConversionRate = { [weak self] ratesArray in
             self?.currencyRates = ratesArray
@@ -19,24 +20,13 @@ extension ViewController {
         }
     }
     
+    // MARK: - ViewsLayout Line Chart
     func configureLayoutViews() {
         configureChart(dataPoints: months, values: unitsSold)
         lineChartView.backgroundColor = UIColor(named: "deepBlue")
         let marker = LineChartDisplayIndicator(color: UIColor(named: "greenShade") ?? .black, font: UIFont.boldSystemFont(ofSize: 14), textColor: .white)
         lineChartView.marker = marker
     }
-    
-    func configureCurrencyDropDown(_ list:[String]) {
-        firstDropDownView.layer.borderWidth = 0.5
-        firstDropDownLabel.text = ""
-        firstCurrencyDropDown.anchorView = firstDropDownView
-        firstCurrencyDropDown.dataSource = list
-        firstCurrencyDropDown.direction = .bottom
-        firstCurrencyDropDown.bottomOffset = CGPoint(x: 0, y: (firstCurrencyDropDown.anchorView?.plainView.bounds.height) ?? 0 )
-        firstCurrencyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in firstDropDownLabel.text = list[index]
-        }
-    }
-    
     
     func configureViews() {
         lineChartView.backgroundColor = .blue
@@ -52,9 +42,19 @@ extension ViewController {
         })
         getConversionDate()
     }
-
     
-   
+    // MARK: - ViewsLayout DropDown
+    func configureCurrencyDropDown(_ list:[String]) {
+        firstDropDownView.layer.borderWidth = 0.5
+        firstDropDownLabel.text = ""
+        firstCurrencyDropDown.anchorView = firstDropDownView
+        firstCurrencyDropDown.dataSource = list
+        firstCurrencyDropDown.direction = .bottom
+        firstCurrencyDropDown.bottomOffset = CGPoint(x: 0, y: (firstCurrencyDropDown.anchorView?.plainView.bounds.height) ?? 0 )
+        firstCurrencyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in firstDropDownLabel.text = list[index]
+        }
+    }
+
     func configureSecondCurrencyDropDown(_ list:[String]) {
         secondDropDownView.layer.borderWidth = 0.5
         secondDropDownLabel.text = ""
@@ -70,7 +70,7 @@ extension ViewController {
         }
     }
     
-    
+    // MARK: - ViewsLayout Chart
     func configureChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {

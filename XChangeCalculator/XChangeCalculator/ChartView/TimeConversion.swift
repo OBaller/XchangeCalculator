@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Date Formatter
+
 extension UnixTime {
     private func formatType(form: String) -> DateFormatter {
         let df = DateFormatter()

@@ -12,6 +12,8 @@ class Currency: Object {
      dynamic var currency = List<CurrencyDictionary>()
 }
 
+// MARK: - Realm Properties
+
 class CurrencyDictionary: Object {
     @objc dynamic var currency: String = ""
     @objc dynamic var rate: Double = 0.0

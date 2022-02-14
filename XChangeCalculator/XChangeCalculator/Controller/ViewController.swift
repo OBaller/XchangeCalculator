@@ -10,8 +10,20 @@ import DropDown
 import Charts
 
 class ViewController: UIViewController, ChartViewDelegate {
+    let searchController = UISearchController()
+    var currencyRates = [Double]()
+    var rateAtIndex = 0.0
+    let months = ["01 Jan", "07 Jun", "15 Jun", "23 Jun", "30 Jun"]
+    let unitsSold = [50.0, 25.0, 50.0, 75.0, 100.0, 75.0]
+    var dataEntries: [ChartDataEntry] = []
+    let viewModel = CurrencyViewModel(apiString: "http://data.fixer.io/api/latest?access_key=6632a7ba5b5888106c6fdfb776308d5e&format=1")
+    lazy var firstCurrencyLogo = [String]()
+    lazy var secondCurrencyLogo = [String]()
+    let secondCurrencyDropDown = DropDown()
+    lazy var firstCurrencyDropDown = DropDown()
 
     var dataEntry = ChartDataEntry()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -27,14 +39,18 @@ class ViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var firstDropDownView: UIView!
     @IBOutlet weak var firstDropDownLabel: UILabel!
+    
     @IBAction func firstDropDownButton(_ sender: Any) {
         firstCurrencyDropDown.show()
     }
+    
     @IBOutlet weak var secondDropDownView: UIView!
     @IBOutlet weak var secondDropDownLabel: UILabel!
+    
     @IBAction func secondDropDownButton(_ sender: Any) {
         secondCurrencyDropDown.show()
     }
+    
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var BottomUIView: UIView!
     @IBOutlet weak var labelOfCurrencyToBeConverted: UILabel!
@@ -46,6 +62,8 @@ class ViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var textFieldOfAmountToBeConverted: UITextField!
     @IBOutlet weak var convertedCurrencyTextField: UITextField!
     @IBOutlet weak var currentTime: UILabel!
+    
+    
     @IBAction func convertButton(_ sender: Any) {
         guard let firstCurrencyText = textFieldOfAmountToBeConverted.text else {
             return
@@ -79,18 +97,7 @@ class ViewController: UIViewController, ChartViewDelegate {
     @objc func dismissKeyboardWhenTapped() {
         self.view.endEditing(true)
     }
-    
-    let searchController = UISearchController()
-    var currencyRates = [Double]()
-    var rateAtIndex = 0.0
-    let months = ["01 Jan", "07 Jun", "15 Jun", "23 Jun", "30 Jun"]
-    let unitsSold = [50.0, 25.0, 50.0, 75.0, 100.0, 75.0]
-    var dataEntries: [ChartDataEntry] = []
-    let viewModel = CurrencyViewModel(apiString: "http://data.fixer.io/api/latest?access_key=6632a7ba5b5888106c6fdfb776308d5e&format=1")
-    lazy var firstCurrencyLogo = [String]()
-    lazy var secondCurrencyLogo = [String]()
-    let secondCurrencyDropDown = DropDown()
-    lazy var firstCurrencyDropDown = DropDown()
+
 }
 
 extension ViewController: UITextFieldDelegate {
